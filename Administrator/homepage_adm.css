@@ -1,0 +1,364 @@
+
+* {
+    box-sizing: border-box;
+    margin-top: 2px;
+}
+
+body {
+    font-family: Arial;
+    width: 100%;
+    margin: auto;
+}
+
+/***********************************************************
+/* 标题 */
+.header {
+    padding: 1px;
+    text-align: center;
+    background: rgb(192, 191, 191);
+    color: black;
+    margin-top: 10px;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: black;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    width: 25%;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: rgb(221, 215, 215);
+    color: black;
+}
+
+.list li {
+    list-style-type: none;
+}
+
+.list a {
+    display: block;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+    padding: 8px 1px;
+}
+
+.list a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/*****************************************/
+
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    width: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.side2 {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+}
+
+.main a{   
+    font-size:16px; 
+    color: black;
+    display:block;
+    text-decoration:none; 
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 10px;
+    text-align: center;
+    background: #ddd;
+}
+
+.footer a {
+    font-size: 10px;
+    color: black;
+}
+
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+/**************************************************/
+li{
+    list-style-type: none;
+}
+
+#menu {
+    margin: auto;
+    height: 45px;
+    background-color: #030e11;
+}
+
+#menu li{
+    float: left;
+    width: 25%;
+    padding: 14px 20px;
+    text-align: center;
+    position:relative;
+    border:none;
+    line-height:39px;
+}
+
+#menu li a {
+    font-size:16px; 
+    color: white;
+    display:block;
+    text-decoration:none; 
+}
+
+#menu li:hover a {
+    color: antiquewhite; /*导航栏文字颜色 */
+}
+
+#menu li:hover .dropdown_1column {
+    left:0px;
+    top:38px;
+}
+
+.dropdown_1column{ /* 下拉菜单边框颜色*/
+    margin: auto;
+    float: left;
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    border: 1px solid #066591;
+    border-top: none;
+    background: #F4F4F4;
+    width: 140px;
+}
+
+#menu li:hover div a { /* 下拉菜单文字颜色*/
+font-size:14px
+;color:#444;
+}
+
+#menu li:hover div a:hover{color:#066591;} /*下拉带单鼠标停留颜色*/
+
+#menu li ul {
+list-style:none;padding:10px 5px;
+margin:0;
+}
+
+#menu li ul li {
+font-size:12px;
+line-height:26px;
+position:relative;
+padding:0;
+margin:0;
+float:none;
+text-align:left;
+width:130px;
+}
+
+#menu li ul li:hover {
+background:none;
+border:none;
+padding:0;
+margin:0;
+}
+
+
+/*******************************************************/
+
+ /*定义一个强制换行显示类*/
+ .spacer {
+    clear: both;
+    height: 1px;
+}
+/*定义表单外框样式*/
+.myform {
+    margin: 0 auto;
+    width: 400px;
+    padding: 14px;
+}
+
+/*定制当前表单样式*/
+#stylized {
+    border: solid 2px grey;
+    background: #ddd;
+}
+    /*设计表单内div和p通用样式效果*/
+    #stylized h1 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    #stylized h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        text-align: center;
+    }
+
+    #stylized p {
+        font-size: 11px;
+        color: #888585;
+        margin-bottom: 10px;
+        border-bottom: solid 1px #c9ccce;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    #stylized label { /*定义表单标签样式*/
+        display: block;
+        font-weight: bold;
+        text-align: right;
+        font-size: 14px;
+        width: 140px;
+        float: left;
+    }
+
+    /*定义小字体样式类*/
+    #stylized .small {
+        color: #666666;
+        display: block;
+        font-size: 11px;
+        font-weight: normal;
+        text-align: right;
+        width: 140px;
+    }
+
+    /*统一输入文本框样式*/
+    #stylized input {
+        float: left;
+        font-size: 12px;
+        padding: 4px 2px;
+        border: solid 1px #c9ccce;
+        width: 200px;
+        margin: 2px 0 20px 10px;
+    }
+
+    /*定义图形化按钮样式*/
+    #stylized button {
+        clear: both;
+        margin-left: 150px;
+        width: 125px;
+        height: 31px;
+        background: #666666 no-repeat;
+        text-align: center;
+        line-height: 31px;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+/*设计表单内文本框和按钮在被激活和获取焦点状态下时，轮廓线的宽、样式和颜色*/
+input:focus, button:focus {
+    outline: thick solid #066591;
+}
+
+input:active, button:active {
+    outline: thick solid #aaa;
+}
+/*通过outlineoffset属性放大轮廓线*/
+input:active, button:active {
+    outline-offset: 1px;
+}
+
+input:focus, button:focus {
+    outline-offset: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

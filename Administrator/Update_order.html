@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revolution To-Go</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="homepage_adm.css">
+    <link rel="stylesheet" href="bootstrap.min.css"> 
+</head>
+
+<body>
+    <div class="header">
+        <h1>Revolution To-Go</h1>
+
+        <p>Welcome to the Revolution Chinese Restaurant database website
+        </p>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li> <a class="drop">Search information</a>
+            <div class="dropdown_1column">
+                <div class="col_1">
+                        <ul class="simple">
+                                <li><a href="search_order.html">Search Order</a></li>
+                                <li><a href="search_item.html">Search Item</a></li>
+                        </ul>
+                </div>
+            </div>
+            </li>
+            <li><a class="drop">Add/Delete information</a>
+            <div class="dropdown_1column">
+                <div class="col_1">
+                        <ul class="simple">
+                            <li><a href="Add_Delete_order.html">Add/Delete Order</a></li>
+                            <li><a href="Add_Delete_item.html">Add/Delete Item</a></li>
+                            <li><a href="Add_admin.html">Add Administrator</a></li>
+                        </ul>
+                </div>
+            </div>
+            </li>
+            <li><a class="drop">Update information</a>
+            <div class="dropdown_1column">
+                <div class="col_1">
+                        <ul class="simple">
+                            <li><a href="Update_order.html">Update Order</a></li>
+                            <li><a href="Update_item.html">Update Item</a></li>
+                        </ul>
+                </div>
+            </div>
+            </li>
+            <li><a class="drop">View table</a>
+                <div class="dropdown_1column">
+                    <div class="col_1">
+                            <ul class="simple">
+                                <li><a href="view_order.php">View Order Table</a></li>
+                                <li><a href="view_includes.php">View Order Includes</a></li>
+                                <li><a href="view_item.php">View Item Table</a></li>
+                                <li><a href="view_menuCat.php">View Categories</a></li>
+                                <li><a href="view_admin.php">View Administrators</a></li>
+                            </ul>
+                    </div>
+             </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div id="stylized" class="myform">
+            <div class="col-md-6 col-sm-6"></div>
+                <form action="update_order.php" method="post"> 
+                    <h2>Update order</h2>
+                    <p>Important: You can only update your phone number, estimated pick-up time, and customized notes once a new order is placed.<br> 
+                    <br>To get the order id, you can use the search order function under the search information tab on the top left corner <br>
+                    <br> Leave blank if an update is not needed<br>
+                    </p>
+                    
+                    <label>Order Id: <span class="small"></span> </label>
+                        <input type="text" name="order_id" placeholder="Order that you want to update">
+                    <label>Phone number: <span class="small"></span> </label>
+                        <input type="tel" name="phone_number" placeholder="Format: 123-456-7890" 
+                            id="phone"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <label>ETA: <span class="small"></span> </label>
+                        <input type="datetime-local" name="estPickupTime" placeholder="Estimated Pick up time"
+                                min="<?php echo date('Y-m-d H:i:s');?>" max="2050-06-30T16:30"
+                                value="<?php echo date('Y-m-d H:i:s');?>"
+                                pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}">
+                    <label>Notes: <span class="small"></span> </label>
+                        <input type="text" name="notes" placeholder="Update additional requirements">
+                
+                    <button type="submit" value="Submit" />Submit</button>
+                    <button type="button" value="back" onclick="javascript:history.back(1)" />Back</button>
+                    <div class="spacer"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <form method='post' action="admin.php">
+        <input type="submit" value="Logout" name="but_logout">
+    </form>
+
+    <div class="footer">
+        <a>Revolution Administration</a>
+    </div>
+    
+        
+</body>
+</html>
